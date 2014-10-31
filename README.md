@@ -35,9 +35,9 @@ In your delegate:
 ```objc
 #pragma mark CDZPingerDelegate
 
-- (void)pinger:(CDZPinger *)pinger didUpdateWithAverageSeconds:(NSTimeInterval)seconds
+- (void)pinger:(CDZPinger *)pinger didUpdate:(NSString *)sender withAverageSeconds:(NSTimeInterval)seconds
 {
-    NSLog([NSString stringWithFormat:@"Received ping; average time %.f ms", seconds*1000]);
+    NSLog([NSString stringWithFormat:@"Received ping from %@; average time %.f ms", sender, seconds*1000]);
 }
 ```
 
