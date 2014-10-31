@@ -2,6 +2,10 @@
 
 Easy-to-use ICMP ping for iOS - just create a CDZPinger and you delegate gets a callback every second with the average ping time.
 
+This is the eXaring fork of the project with a couple of specific changes
+others don't need. Don't get distracted and go for the
+[original](https://github.com/cdzombak/CDZPinger) version.
+
 ## Installation
 
 Add the dependency to your `Podfile`:

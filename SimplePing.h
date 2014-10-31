@@ -72,7 +72,7 @@
 + (SimplePing *)simplePingWithHostName:(NSString *)hostName;        // chooses first IPv4 address
 + (SimplePing *)simplePingWithHostAddress:(NSData *)hostAddress;    // contains (struct sockaddr)
 
-@property (nonatomic, weak,   readwrite) id<SimplePingDelegate> delegate;
+@property (nonatomic, assign,   readwrite) id<SimplePingDelegate> delegate;
 
 @property (nonatomic, copy,   readonly ) NSString *             hostName;
 @property (nonatomic, copy,   readonly ) NSData *               hostAddress;

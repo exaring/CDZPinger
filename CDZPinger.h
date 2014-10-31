@@ -4,7 +4,7 @@
 
 @interface CDZPinger : NSObject
 
-@property (nonatomic, weak) id<CDZPingerDelegate> delegate;
+@property (nonatomic, assign) id<CDZPingerDelegate> delegate;
 @property (nonatomic, copy, readonly) NSString *domainOrIp;
 
 /**
@@ -23,6 +23,13 @@
  * @param domainOrIp Domain name or IPv4 address to ping
  */
 - (id)initWithHost:(NSString *)domainOrIp;
+
+/**
+ * Looks up the MAC address of the provided IP address.
+ *
+ * @param ipAddress IP address to look up
+ */
++ (NSString *)ip2mac:(NSString *)ipAddress;
 
 /**
  * Tell the pinger to begin pinging when it's ready.
@@ -44,7 +51,7 @@
  * @param pinger This CDZPinger object
  * @param seconds The average ping time, in seconds
  */
-- (void)pinger:(CDZPinger *)pinger didUpdateWithAverageSeconds:(NSTimeInterval)seconds;
+- (void)pinger:(CDZPinger *)pinger didUpdate:(NSString *)sender withAverageSeconds:(NSTimeInterval)seconds;
 
 @optional
 
